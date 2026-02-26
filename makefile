@@ -24,7 +24,7 @@ st:
 install:
 	npm install -g bun & bun install
 
-#pwsh set before (Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass)
+#pwsh manual, set before (Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass)
 run:
 	powershell.exe -Command "$$env:NODE_ENV='development'; bun run dev --port ${PORT} --mode ${MODE}"
 
