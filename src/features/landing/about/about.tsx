@@ -1,5 +1,14 @@
-export const About = () => {
+import { MetaTags, type MetaHelmetProps } from '../../../shared/helpers/MetaTags'
+
+interface AboutProps {
+	metaData?: MetaHelmetProps['metaData']
+}
+
+export const About = ({ metaData }: AboutProps) => {
 	return (
-		<div>About</div>
+		<>
+			<MetaTags metaData={metaData} />
+			<div>About</div>
+		</>
 	)
 }

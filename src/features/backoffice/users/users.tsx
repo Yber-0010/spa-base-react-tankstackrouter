@@ -1,11 +1,13 @@
+import { MetaTags, type MetaHelmetProps } from '../../../shared/helpers/MetaTags'
+
 interface UsersProps {
-	metaData?: { title?: string }
+	metaData?: MetaHelmetProps['metaData']
 }
 
 export const Users = ({ metaData }: UsersProps) => {
 	return (
 		<>
-			{metaData?.title && <title>{metaData.title}</title>}
+			<MetaTags metaData={metaData} />
 			<div>Users</div>
 		</>
 	)

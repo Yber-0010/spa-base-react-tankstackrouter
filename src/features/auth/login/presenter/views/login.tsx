@@ -2,10 +2,11 @@ import { useNavigate } from '@tanstack/react-router'
 import { keyStorage } from '../../../../../shared/utils/keyStorage'
 import { useLocalStorage } from '../../../../../shared/hooks/useLocalStorage'
 import { Button } from '@mantine/core'
+import { MetaTags, type MetaHelmetProps } from '../../../../../shared/helpers/MetaTags'
 import '../css/login.css'
 
 interface LoginProps {
-	metaData?: { title?: string }
+	metaData?: MetaHelmetProps['metaData']
 }
 
 export const Login = ({ metaData }: LoginProps) => {
@@ -23,7 +24,7 @@ export const Login = ({ metaData }: LoginProps) => {
 
 	return (
 		<>
-			{metaData?.title && <title>{metaData.title}</title>}
+			<MetaTags metaData={metaData} />
 			<h1>LOGIN</h1>
 			<button onClick={login}>Login</button>
 			<hr className='test'/>

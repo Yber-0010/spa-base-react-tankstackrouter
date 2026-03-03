@@ -1,5 +1,14 @@
-export const Register = () => {
+import { MetaTags, type MetaHelmetProps } from '../../../shared/helpers/MetaTags'
+
+interface RegisterProps {
+	metaData?: MetaHelmetProps['metaData']
+}
+
+export const Register = ({ metaData }: RegisterProps) => {
 	return (
-		<div>Register</div>
+		<>
+			<MetaTags metaData={metaData} />
+			<div>Register</div>
+		</>
 	)
 }

@@ -1,4 +1,5 @@
 import { ThemeMantineProvider } from "./themeMantineProvider"
+import { MetaHelmetProvider } from './metaHelmetProvider';
 
 type Props = {
 	children: React.ReactNode
@@ -6,8 +7,10 @@ type Props = {
 
 export const Providers = ({ children }: Props) => {
 	return (
-		<ThemeMantineProvider>
-			{children}
-		</ThemeMantineProvider>
+		<MetaHelmetProvider>
+			<ThemeMantineProvider>
+				{children}
+			</ThemeMantineProvider>
+		</MetaHelmetProvider>
 	)
 }

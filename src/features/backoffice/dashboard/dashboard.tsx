@@ -1,6 +1,15 @@
-export const Dashboard = () => {
+import { MetaTags, type MetaHelmetProps } from '../../../shared/helpers/MetaTags'
+
+interface DashboardProps {
+  metaData?: MetaHelmetProps['metaData']
+}
+
+export const Dashboard = ({ metaData }: DashboardProps) => {
   return (
-    <div>Dashboard</div>
+    <>
+      <MetaTags metaData={metaData} />
+      <div>Dashboard</div>
+    </>
   )
 }
 

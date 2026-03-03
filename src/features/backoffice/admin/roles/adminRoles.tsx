@@ -1,3 +1,14 @@
-export const AdminRoles = () => {
-	return <div>Admin Roles</div>
+import { MetaTags, type MetaHelmetProps } from '../../../../shared/helpers/MetaTags'
+
+interface AdminRolesProps {
+	metaData?: MetaHelmetProps['metaData']
+}
+
+export const AdminRoles = ({ metaData }: AdminRolesProps) => {
+	return (
+		<>
+			<MetaTags metaData={metaData} />
+			<div>Admin Roles</div>
+		</>
+	)
 }
