@@ -5,11 +5,11 @@
 | Dependencias | Rol/Descripción | Estado
 |----------|:-------------:|:-------------:|
 | tankstack router | Enrutamiento | ✅ |
-| @mantine/core | Core components library: inputs, buttons, overlays, etc. | ❌ |
-| @mantine/hooks | Hooks for state and UI management | ❌ |
+| @mantine/core | Core components library: inputs, buttons, overlays, etc. | ✅ |
+| @mantine/hooks | Hooks for state and UI management | ✅ |
 | @mantine/dates y dayjs | Date inputs, calendars, para manejo de fechas | ❌ |
-| react-helmet-async | meta datos | ❌ |
-| i18next y react-i18next| para internacionalizacion manual | ❌ |
+| react-helmet-async | meta datos | ✅ |
+| i18next y react-i18next| para internacionalizacion manual | ✅ |
 | @mantine/form o React hook form con zod | para formularios | ❌ |
 | @mantine/notifications | para notificaciones | ❌ |
 | tankstack Query | Cacheo | ❌ |
