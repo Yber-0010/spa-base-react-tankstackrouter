@@ -9,19 +9,3 @@ export const useCheckAuthenticated = (): boolean => {
 
 	return getStorage(auth)?.auth === 'true'
 }
-
-export const checkAuthenticated = (): boolean => {
-
-	try {
-		const { auth } = keyStorage()
-
-		const raw = localStorage.getItem(auth)
-
-		if (!raw) return false
-
-		return (JSON.parse(raw)?.auth as string) === 'true'
-
-	} catch {
-		return false
-	}
-}
