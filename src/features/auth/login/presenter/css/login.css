@@ -1,0 +1,9 @@
+.test {
+  @mixin light {
+    border: 1px solid yellow;
+  }
+
+  @mixin dark {
+    border: 1px solid red;
+  }
+}

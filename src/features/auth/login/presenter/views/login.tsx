@@ -1,6 +1,8 @@
 import { useNavigate } from '@tanstack/react-router'
-import { keyStorage } from '../../../shared/utils/keyStorage'
-import { useStorage } from '../../../shared/hooks/useStorage'
+import { keyStorage } from '../../../../../shared/utils/keyStorage'
+import { useLocalStorage } from '../../../../../shared/hooks/useLocalStorage'
+import { Button } from '@mantine/core'
+import '../css/login.css'
 
 interface LoginProps {
 	metaData?: { title?: string }
@@ -10,8 +12,8 @@ export const Login = ({ metaData }: LoginProps) => {
 
 	const { auth } = keyStorage()
 
-	const { setStorage } = useStorage()
-	
+	const { setStorage } = useLocalStorage()
+
 	const navigate = useNavigate()
 
 	const login = () => {
@@ -24,6 +26,10 @@ export const Login = ({ metaData }: LoginProps) => {
 			{metaData?.title && <title>{metaData.title}</title>}
 			<h1>LOGIN</h1>
 			<button onClick={login}>Login</button>
+			<hr className='test'/>
+			<Button variant="filled">Button</Button>
 		</>
 	)
 }
+
+

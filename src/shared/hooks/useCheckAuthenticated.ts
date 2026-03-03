@@ -1,11 +1,11 @@
 import { keyStorage } from '../utils/keyStorage'
-import { useStorage } from './useStorage'
+import { useLocalStorage } from './useLocalStorage'
 
 export const useCheckAuthenticated = (): boolean => {
 
 	const { auth } = keyStorage()
 
-	const { getStorage } = useStorage()
+	const { getStorage } = useLocalStorage()
 
 	return getStorage(auth)?.auth === 'true'
 }

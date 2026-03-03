@@ -1,6 +1,6 @@
-const ls = localStorage
+const ls = sessionStorage
 
-export const useStorage = () => {
+export const useSessionStorage = () => {
 
 	const setStorage = (key: string, value: object): boolean => {
 		try {

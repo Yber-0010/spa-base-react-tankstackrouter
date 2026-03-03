@@ -1,11 +1,11 @@
 import { Link, Outlet, useNavigate } from '@tanstack/react-router'
-import { useStorage } from '../../../shared/hooks/useStorage'
+import { useLocalStorage } from '../../../shared/hooks/useLocalStorage'
 
 export const BackofficeLayout = () => {
 
 	const navigate = useNavigate()
 	
-	const { removeAllStorage } = useStorage()
+	const { removeAllStorage } = useLocalStorage()
 
 	const logout = () => {
 		removeAllStorage()
