@@ -1,8 +1,8 @@
 import { MantineProvider } from '@mantine/core';
 import '@mantine/core/styles.css';
 import '../../shared/styles/font.css';
-import { myTheme as theme } from '../../shared/theme/theme';
-import { env } from '../../shared/environments/environments';
+import { myTheme as theme } from '../theme/theme';
+import { env } from '../environments/environments';
 
 type Props = {
 	children: React.ReactNode

@@ -9,7 +9,7 @@ import { landingRouter } from '../../features/landing/router/router'
 import { authRouter } from '../../features/auth/router/router'
 import { backofficeRouter } from '../../features/backoffice/router/router'
 import { ROUTES } from '../../shared/constants/routes'
-import { env } from '../../shared/environments/environments'
+import { env } from '../environments/environments'
 import { parseStringToBool } from '../../shared/utils/parse'
 
 const baseRoute = ROUTES.auth.login.fullPath
