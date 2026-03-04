@@ -15,6 +15,8 @@
 | tankstack Query | Cacheo | ❌ |
 | tankstack Table | Tablas mas dinámicas | ❌ |
 | Axios | para peticiones http fetch | ❌ |
+| Zustand | para gestion de estados | ❌ |
+| react-google-recaptcha | validar que no sea un robot | ❌ |
 
 
 ### Test

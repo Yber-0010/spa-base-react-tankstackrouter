@@ -1,6 +1,11 @@
-import { createTheme } from '@mantine/core';
+import { createTheme, DEFAULT_THEME } from '@mantine/core';
 
 export const myTheme = createTheme({
+    fontFamily: 'Montserrat, sans-serif',
+    fontFamilyMonospace: 'Monaco, Courier, monospace',
+    headings: {
+        fontFamily: `Montserrat, ${DEFAULT_THEME.fontFamily}`,
+    },
     colors: {
         brand: [
             '#f0f5ff',   // [0]  → Más claro  (bg variante light)
