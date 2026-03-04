@@ -1,9 +1,58 @@
-.test {
-  @mixin light {
-    border: 1px solid yellow;
+.login-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.login-left {
+  flex: 1;
+  background: url('/login-bg.png') center center/cover no-repeat;
+  display: flex;
+  align-items: flex-start;
+  padding: 2rem;
+}
+
+.logo-desktop {
+  width: 120px;
+}
+
+.login-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  padding: 2rem;
+}
+
+.login-form-wrapper {
+  width: 100%;
+  max-width: 420px;
+}
+
+.logo-mobile {
+  display: none;
+  width: 130px;
+  margin-bottom: 2rem;
+}
+
+
+@media (max-width: 992px) {
+
+  .login-layout {
+    flex-direction: column;
   }
 
-  @mixin dark {
-    border: 1px solid red;
+  .login-left {
+    display: none;
   }
+
+  .logo-mobile {
+    display: block; 
+  }
+
+  .login-right {
+    align-items: unset;
+    justify-content: unset;
+  }
+
 }
