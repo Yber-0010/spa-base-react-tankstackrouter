@@ -9,6 +9,8 @@ import { landingRouter } from '../../features/landing/router/router'
 import { authRouter } from '../../features/auth/router/router'
 import { backofficeRouter } from '../../features/backoffice/router/router'
 import { ROUTES } from '../../shared/constants/routes'
+import { env } from '../../shared/environments/environments'
+import { parseStringToBool } from '../../shared/utils/parse'
 
 const baseRoute = ROUTES.auth.login.fullPath
 
@@ -41,10 +43,12 @@ export const TankStackRouter = () => {
 	return (
 		<>
 			<RouterProvider router={router} />
-			<TanStackRouterDevtools
-				router={router}
-				initialIsOpen={false}
-			/>
+			{parseStringToBool(env.VITE_TANKSTACK_ROUTER_TOOLS) && (
+				<TanStackRouterDevtools
+					router={router}
+					initialIsOpen={false}
+				/>
+			)}
 		</>
 	)
 }

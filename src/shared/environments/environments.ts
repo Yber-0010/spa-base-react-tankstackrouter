@@ -1,0 +1,4 @@
+export const env = {
+		VITE_TANKSTACK_ROUTER_TOOLS: import.meta.env.VITE_TANKSTACK_ROUTER_TOOLS || 'false',
+		VITE_MANTINE_DEFAULT_THEME: import.meta.env.VITE_MANTINE_DEFAULT_THEME || 'light',
+}
