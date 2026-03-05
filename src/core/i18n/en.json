@@ -2,6 +2,12 @@
   "welcome": "Welcome",
   "description": "This is the app",
   "login": {
-    "title": "Login"
+    "title": "Login",
+    "validation": {
+      "emailInvalid": "Invalid email address",
+      "emailRequired": "Email is required",
+      "passwordRequired": "Password is required",
+      "passwordMin": "Password must be at least 6 characters"
+    }
   }
 }

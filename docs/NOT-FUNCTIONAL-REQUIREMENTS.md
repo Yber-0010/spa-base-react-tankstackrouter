@@ -10,13 +10,13 @@
 | @mantine/dates y dayjs | Date inputs, calendars, para manejo de fechas | ❌ |
 | react-helmet-async | meta datos | ✅ |
 | i18next y react-i18next| para internacionalizacion manual | ✅ |
-| @mantine/form o React hook form con zod | para formularios | ❌ |
+| @mantine/form con zod | para formularios | ✅ |
 | @mantine/notifications | para notificaciones | ❌ |
 | tankstack Query | Cacheo | ❌ |
 | tankstack Table | Tablas mas dinámicas | ❌ |
 | Axios | para peticiones http fetch | ❌ |
 | Zustand | para gestion de estados | ❌ |
-| react-google-recaptcha | validar que no sea un robot | ❌ |
+| react-google-recaptcha | validar que no sea un robot | ✅ |
 
 
 ### Test

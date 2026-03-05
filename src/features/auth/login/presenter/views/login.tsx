@@ -1,10 +1,13 @@
 import { useState } from 'react'
 import { useNavigate } from '@tanstack/react-router'
 import { Paper, TextInput, PasswordInput, Button, Title, Stack } from '@mantine/core'
-import { MetaTags, type MetaHelmetProps } from '../../../../../shared/helpers/MetaTags'
-import { useTraslate } from '../../../../../shared/hooks/useTraslate'
-import { useLocalStorage } from '../../../../../shared/hooks/useLocalStorage'
-import { keyStorage } from '../../../../../shared/utils/keyStorage'
+import { MetaTags, type MetaHelmetProps } from '@/shared/helpers/MetaTags'
+import { useTraslate } from '@/shared/hooks/useTraslate'
+import { useLocalStorage } from '@/shared/hooks/useLocalStorage'
+import { keyStorage } from '@/shared/utils/keyStorage'
+import { useCaptcha } from '@/shared/hooks/useCaptcha'
+import ReCAPTCHA from 'react-google-recaptcha';
+import { env } from '@/core/environments/environments'
 import '../css/login.css'
 
 interface LoginProps {
@@ -20,6 +23,7 @@ export const Login = ({ metaData }: LoginProps) => {
 	const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
 	const [isLoading, setIsLoading] = useState(false)
+	const { captcha, handleCaptcha } = useCaptcha()
 
 	const handleLogin = async (e: React.FormEvent) => {
 		e.preventDefault()
@@ -55,7 +59,7 @@ export const Login = ({ metaData }: LoginProps) => {
 
 				<div className="login-right">
 					<div className="login-form-wrapper">
-						
+
 						<img
 							src="/logo-datec-blue.png"
 							alt="Logo"
@@ -86,6 +90,12 @@ export const Login = ({ metaData }: LoginProps) => {
 										onChange={(e) => setPassword(e.currentTarget.value)}
 										disabled={isLoading}
 										required
+									/>
+
+									<ReCAPTCHA
+										sitekey={env.VITE_SITEKEY_RECAPTCHA}
+										onChange={handleCaptcha}
+										// theme={darkMode === 'dark' ? 'dark' : 'light'}
 									/>
 
 									<Button type="submit" loading={isLoading} fullWidth mt="md">
