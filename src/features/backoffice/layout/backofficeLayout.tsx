@@ -5,10 +5,13 @@ export const BackofficeLayout = () => {
 
 	const navigate = useNavigate()
 	
-	const { removeAllStorage } = useLocalStorage()
+	const { removeStorage } = useLocalStorage()
 
+	const keys = {
+		auth: 'auth',
+	}
 	const logout = () => {
-		removeAllStorage()
+		removeStorage(keys.auth)
 		navigate({ to: '/login' })
 	}
 

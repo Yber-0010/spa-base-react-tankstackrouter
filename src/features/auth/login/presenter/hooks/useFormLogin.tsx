@@ -5,6 +5,7 @@ import { zod4Resolver } from 'mantine-form-zod-resolver';
 import { useLocalStorage } from '@/shared/hooks/useLocalStorage';
 import { useTraslate } from '@/shared/hooks/useTraslate';
 import { keyStorage } from '@/shared/utils/keyStorage';
+import { useEffect } from 'react';
 
 
 export const useFormLogin = () => {
@@ -40,12 +41,18 @@ export const useFormLogin = () => {
 
 	const handleRememberMe = (checked: boolean) => {
 		if (checked) {
-			const { email } = loginForm.getValues();
-			setStorage(keys.loginRemember, { email });
+			const email = loginForm.values.email;
+			if (email) {
+				setStorage(keys.loginRemember, { email });
+			}
 		} else {
 			removeStorage(keys.loginRemember);
 		}
 	};
+
+	useEffect(() => {
+		handleRememberMe(loginForm.values.rememberMe);
+	}, [loginForm.values.rememberMe, loginForm.values.email]);
 
 	return { loginForm, handleRememberMe };
 }

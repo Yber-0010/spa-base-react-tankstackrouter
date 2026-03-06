@@ -3,6 +3,7 @@
   "description": "Esta es la aplicación",
   "login": {
     "title": "Iniciar sesión",
+    "rememberMe": "Recuérdame",
     "validation": {
       "emailInvalid": "Correo electrónico inválido",
       "emailRequired": "El correo electrónico es requerido",

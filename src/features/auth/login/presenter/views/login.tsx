@@ -1,13 +1,12 @@
-import { useState } from 'react'
 import { useNavigate } from '@tanstack/react-router'
-import { Paper, TextInput, PasswordInput, Button, Title, Stack } from '@mantine/core'
+import { Paper, TextInput, PasswordInput, Title, Stack, Checkbox } from '@mantine/core'
+import { BFButton } from '@/shared/components/ui/BFButton/BFButton'
 import { MetaTags, type MetaHelmetProps } from '@/shared/helpers/MetaTags'
 import { useTraslate } from '@/shared/hooks/useTraslate'
-import { useLocalStorage } from '@/shared/hooks/useLocalStorage'
-import { keyStorage } from '@/shared/utils/keyStorage'
 import { useCaptcha } from '@/shared/hooks/useCaptcha'
-import ReCAPTCHA from 'react-google-recaptcha';
+import ReCAPTCHA from 'react-google-recaptcha'
 import { env } from '@/core/environments/environments'
+import { useFormLogin } from '../hooks/useFormLogin'
 import '../css/login.css'
 
 interface LoginProps {
@@ -17,32 +16,19 @@ interface LoginProps {
 export const Login = ({ metaData }: LoginProps) => {
 	const { t } = useTraslate()
 	const navigate = useNavigate()
-	const { setStorage } = useLocalStorage()
-	const { auth } = keyStorage()
+	const { loginForm, handleRememberMe } = useFormLogin()
+	const { handleCaptcha } = useCaptcha() // captcha value not needed here
 
-	const [email, setEmail] = useState('')
-	const [password, setPassword] = useState('')
-	const [isLoading, setIsLoading] = useState(false)
-	const { captcha, handleCaptcha } = useCaptcha()
-
-	const handleLogin = async (e: React.FormEvent) => {
-		e.preventDefault()
-
-		if (!email || !password) {
-			alert('Por favor completa todos los campos')
-			return
-		}
-
+	const handleLogin = loginForm.onSubmit(async (values) => {
+		// values has {email, password, rememberMe}
 		try {
-			setIsLoading(true)
-			setStorage(auth, { auth: 'true', email })
+			// here you would call your auth API; for now we just store and redirect
+			localStorage.setItem('auth', JSON.stringify({ auth: 'true', email: values.email }))
 			await navigate({ to: '/backoffice/dashboard' })
 		} catch (error) {
 			console.error('Error:', error)
-		} finally {
-			setIsLoading(false)
 		}
-	}
+	})
 
 	return (
 		<>
@@ -76,9 +62,7 @@ export const Login = ({ metaData }: LoginProps) => {
 									<TextInput
 										label="E-mail"
 										placeholder="tu@email.com"
-										value={email}
-										onChange={(e) => setEmail(e.currentTarget.value)}
-										disabled={isLoading}
+										{...loginForm.getInputProps("email")}
 										required
 										type="email"
 									/>
@@ -86,23 +70,34 @@ export const Login = ({ metaData }: LoginProps) => {
 									<PasswordInput
 										label="Contraseña"
 										placeholder="••••••••"
-										value={password}
-										onChange={(e) => setPassword(e.currentTarget.value)}
-										disabled={isLoading}
+										{...loginForm.getInputProps("password")}
 										required
 									/>
+									<Checkbox
+										label={t("login.rememberMe")}
+										{...loginForm.getInputProps("rememberMe", {
+											type: "checkbox",
+											onChange: (e: React.ChangeEvent<HTMLInputElement>) => handleRememberMe(e.currentTarget.checked),
+										})} />
 
-									<ReCAPTCHA
-										sitekey={env.VITE_SITEKEY_RECAPTCHA}
-										onChange={handleCaptcha}
-										// theme={darkMode === 'dark' ? 'dark' : 'light'}
-									/>
+									   <div style={{ display: 'flex', justifyContent: 'center' }}>
+										   <ReCAPTCHA
+											   sitekey={env.VITE_SITEKEY_RECAPTCHA}
+											   onChange={handleCaptcha}
+										   />
+									   </div>
 
-									<Button type="submit" loading={isLoading} fullWidth mt="md">
+									<BFButton
+										type="submit"
+										loading={loginForm.submitting}
+										fullWidth
+										mt="md"
+									>
 										Ingresar
-									</Button>
+									</BFButton>
 								</Stack>
 							</form>
+
 						</Paper>
 					</div>
 				</div>
