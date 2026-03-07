@@ -10,23 +10,23 @@ const LANDING_ROUTES = {
 	home: {
 		path: '/home',
 		fullPath: '/home',
-		name: 'Home',
+		name: 'home',
 	},
 	product: {
 		path: '/product/$id',
 		fullPath: '/product/$id',
-		name: 'Product',
+		name: 'product',
 		to: (id: string) => `/product/${id}`,
 	},
 	contact: {
 		path: '/contact',
 		fullPath: '/contact',
-		name: 'Contact',
+		name: 'contact',
 	},
 	about: {
 		path: '/about',
 		fullPath: '/about',
-		name: 'About',
+		name: 'about',
 	},
 } as const satisfies Record<string, AppRoute>
 
@@ -34,7 +34,7 @@ const AUTH_ROUTES = {
 	login: {
 		path: '/login',
 		fullPath: '/login',
-		name: 'Login',
+		name: 'login',
 	},
 } as const satisfies Record<string, AppRoute>
 
@@ -44,17 +44,17 @@ const BACKOFFICE_ROUTES = {
 	backoffice: {
 		path: '/backoffice',
 		fullPath: '/backoffice',
-		name: 'Backoffice',
+		name: 'backoffice',
 	},
 	dashboard: {
 		path: 'dashboard',
 		fullPath: '/backoffice/dashboard',
-		name: 'Dashboard',
+		name: 'dashboard',
 	},
 	users: {
 		path: 'users',
 		fullPath: '/backoffice/users',
-		name: 'Users',
+		name: 'users',
 	},
 } as const satisfies Record<string, AppRoute>
 
@@ -65,22 +65,28 @@ const ADMIN_ROUTES = {
 	root: {
 		path: 'admin',
 		fullPath: '/backoffice/admin',
-		name: 'Admin',
+		name: 'admin',
 	},
 	users: {
 		path: 'users',
 		fullPath: '/backoffice/admin/users',
-		name: 'Admin Users',
+		name: 'users',
 	},
 	roles: {
 		path: 'roles',
 		fullPath: '/backoffice/admin/roles',
-		name: 'Roles',
+		name: 'roles',
 	},
 	permissions: {
 		path: 'permissions',
 		fullPath: '/backoffice/admin/permissions',
-		name: 'Permissions',
+		name: 'permissions',
+	},
+	userDetail: {
+		path: 'users/$userId',
+		fullPath: '/backoffice/admin/users/$userId',
+		name: 'Detalle de usuario',
+		to: (userId: string) => `/backoffice/admin/users/${userId}`,
 	},
 } as const satisfies Record<string, AppRoute>
 

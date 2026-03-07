@@ -1,10 +1,10 @@
 export const backofficeMetaData = () => {
 	const metaData = {
 		users: {
-			title: 'Users',
+			title: 'users',
 		},
 		dashboard: {
-			title: 'Dashboard',
+			title: 'dashboard',
 		}
 	}
 	return metaData

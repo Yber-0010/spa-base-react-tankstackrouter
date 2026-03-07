@@ -10,5 +10,33 @@
       "passwordRequired": "La contraseña es requerida",
       "passwordMin": "La contraseña debe tener al menos 6 caracteres"
     }
-  }
+  },
+	"topTitles":{
+		"home": "Inicio",
+		"product": "Producto",
+		"contact": "Contacto",
+		"about": "Acerca de",
+		"login": "Iniciar sesión",
+		"register": "Registrarse",
+		"dashboard": "Panel de control",
+		"users": "Usuarios",
+		"roles": "Roles",
+		"permissions": "Permisos",
+		"notFound": "Página no encontrada",
+		"userDetail": "Detalle de usuario"
+	},
+	"rutes": {
+		"home": "Inicio",
+		"product": "Producto",
+		"contact": "Contacto",
+		"about": "Acerca de",
+		"login": "Iniciar sesión",
+		"register": "Registrarse",
+		"dashboard": "Panel de control",
+		"users": "Usuarios",
+		"roles": "Roles",
+		"permissions": "Permisos",
+		"notFound": "Página no encontrada",
+		"userDetail": "Detalle de usuario"
+	}
 }

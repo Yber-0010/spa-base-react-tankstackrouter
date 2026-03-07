@@ -36,13 +36,15 @@ export const adminRouter = (parentRoute: AnyRoute) => {
 		beforeLoad: () => { throw redirect({ to: ROUTES.admin.users.fullPath }) },
 	})
 
-	const childRoutes = routes.map(({ path, component, metadata }) => {
+	const childRoutes = routes.map(({ path, component, metadata, ...rest }) => {
 
 		const Component = component as React.ComponentType<any>
+		const staticData = 'staticData' in rest ? rest.staticData : undefined
 
 		return createRoute({
 			getParentRoute: () => adminLayoutRoute,
 			path: path,
+			...(staticData ? { staticData } : {}),
 			component: () => (
 				<Suspense fallback={<div>Loading…</div>}>
 					<Component metaData={metadata} />

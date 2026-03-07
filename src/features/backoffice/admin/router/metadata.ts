@@ -1,13 +1,16 @@
 export const adminMetaData = () => {
 	const metaData = {
 		users: {
-			title: 'Admin Users',
+			title: 'users',
 		},
 		roles: {
-			title: 'Admin Roles',
+			title: 'roles',
 		},
 		permissions: {
-			title: 'Admin Permissions',
+			title: 'permissions',
+		},
+		userDetail: {
+			title: 'userDetail',
 		},
 	}
 	return metaData

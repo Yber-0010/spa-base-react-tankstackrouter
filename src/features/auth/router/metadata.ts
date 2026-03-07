@@ -2,7 +2,7 @@ export const authMetaData = () => {
 	
 	const metaData = {
 		login: {
-			title: 'Login',
+			title: 'login',
 		},
 	}
 	return metaData

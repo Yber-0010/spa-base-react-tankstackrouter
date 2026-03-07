@@ -9,5 +9,33 @@
       "passwordRequired": "Password is required",
       "passwordMin": "Password must be at least 6 characters"
     }
-  }
+  },
+	"topTitles":{
+		"home": "Home",
+		"product": "Product",
+		"contact": "Contact",
+		"about": "About",
+		"login": "Login",
+		"register": "Register",
+		"dashboard": "Dashboard",
+		"users": "Users",
+		"roles": "Roles",
+		"permissions": "Permissions",
+		"notFound": "Not Found",
+		"userDetail": "User Detail"
+	},
+	"rutes": {
+		"home": "Home",
+		"product": "Product",
+		"contact": "Contact",
+		"about": "About",
+		"login": "Login",
+		"register": "Register",
+		"dashboard": "Dashboard",
+		"users": "Users",
+		"roles": "Roles",
+		"permissions": "Permissions",
+		"notFound": "Not Found",
+		"userDetail": "User Detail"
+	}
 }
