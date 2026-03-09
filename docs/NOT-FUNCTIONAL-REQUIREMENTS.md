@@ -18,6 +18,13 @@
 | Zustand | para gestion de estados | ❌ |
 | react-google-recaptcha | validar que no sea un robot | ✅ |
 
+### Lint
+| devDependencias | Rol/Descripción | Estado
+|----------|:-------------:|:-------------:|
+| husky | ejecutar scripts automáticos en los hooks de Git | ✅ |
+| lint-staged | "staged" (preparados para el commit) en Git.  | ✅ |
+| @biomejs/biome | herramienta para formatear  | ✅ |
+
 
 ### Test
 
