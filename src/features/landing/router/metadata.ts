@@ -12,6 +12,6 @@ export const landingMetaData = () => {
 		about: {
 			title: 'about',
 		},
-	}
-	return metaData
-}
+	};
+	return metaData;
+};

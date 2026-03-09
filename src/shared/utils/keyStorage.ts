@@ -3,5 +3,5 @@ export const keyStorage = () => {
 		auth: 'auth',
 		lang: 'lang',
 		loginRemember: 'loginRemember',
-	}
-}
+	};
+};

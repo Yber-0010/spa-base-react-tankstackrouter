@@ -1,9 +1,8 @@
-
 export interface AppRoute {
-	path: string
-	fullPath: string
-	name: string
-	to?: (...args: string[]) => string
+	path: string;
+	fullPath: string;
+	name: string;
+	to?: (...args: string[]) => string;
 }
 
 const LANDING_ROUTES = {
@@ -28,7 +27,7 @@ const LANDING_ROUTES = {
 		fullPath: '/about',
 		name: 'about',
 	},
-} as const satisfies Record<string, AppRoute>
+} as const satisfies Record<string, AppRoute>;
 
 const AUTH_ROUTES = {
 	login: {
@@ -36,7 +35,7 @@ const AUTH_ROUTES = {
 		fullPath: '/login',
 		name: 'login',
 	},
-} as const satisfies Record<string, AppRoute>
+} as const satisfies Record<string, AppRoute>;
 
 // El layout de backoffice usa path: '/backoffice'
 // Los hijos usan paths relativos (sin /) tal como los espera TanStack Router
@@ -56,7 +55,7 @@ const BACKOFFICE_ROUTES = {
 		fullPath: '/backoffice/users',
 		name: 'users',
 	},
-} as const satisfies Record<string, AppRoute>
+} as const satisfies Record<string, AppRoute>;
 
 // Sub-sección admin dentro de /backoffice
 // El layout admin usa path: 'admin' (relativo a /backoffice → da /backoffice/admin)
@@ -88,34 +87,33 @@ const ADMIN_ROUTES = {
 		name: 'Detalle de usuario',
 		to: (userId: string) => `/backoffice/admin/users/${userId}`,
 	},
-} as const satisfies Record<string, AppRoute>
+} as const satisfies Record<string, AppRoute>;
 
 export const ROUTES = {
-	landing:    LANDING_ROUTES,
-	auth:       AUTH_ROUTES,
+	landing: LANDING_ROUTES,
+	auth: AUTH_ROUTES,
 	backoffice: BACKOFFICE_ROUTES,
-	admin:      ADMIN_ROUTES,
-} as const
+	admin: ADMIN_ROUTES,
+} as const;
 
-export const landingRouteList    = Object.values(LANDING_ROUTES)
-export const authRouteList       = Object.values(AUTH_ROUTES)
+export const landingRouteList = Object.values(LANDING_ROUTES);
+export const authRouteList = Object.values(AUTH_ROUTES);
 // Excluye 'root' de la lista de hijos navegables del backoffice
-export const backofficeRouteList = [BACKOFFICE_ROUTES.dashboard, BACKOFFICE_ROUTES.users]
+export const backofficeRouteList = [BACKOFFICE_ROUTES.dashboard, BACKOFFICE_ROUTES.users];
 // Excluye 'root' de la lista de hijos navegables del admin
-export const adminRouteList      = [ADMIN_ROUTES.users, ADMIN_ROUTES.roles, ADMIN_ROUTES.permissions]
+export const adminRouteList = [ADMIN_ROUTES.users, ADMIN_ROUTES.roles, ADMIN_ROUTES.permissions];
 
 export const allRouteList: AppRoute[] = [
 	...landingRouteList,
 	...authRouteList,
 	...backofficeRouteList,
 	...adminRouteList,
-]
+];
 
 // usage
 // Navegar
 // navigate({ to: ROUTES.landing.product.to('abc-123') })
 // navigate({ to: ROUTES.landing.contact.path })
-
 
 // Link
 // <Link to={ROUTES.landing.product.to(product.id)}>Ver producto</Link>

@@ -1,8 +1,8 @@
-import { useLoaderData } from '@tanstack/react-router'
-import { MetaTags, type MetaHelmetProps } from '../../../shared/helpers/MetaTags'
+// import { useLoaderData } from '@tanstack/react-router';
+import { type MetaHelmetProps, MetaTags } from '../../../shared/helpers/MetaTags';
 
 interface ProductProps {
-	metaData?: MetaHelmetProps['metaData']
+	metaData?: MetaHelmetProps['metaData'];
 }
 
 /**
@@ -10,8 +10,8 @@ interface ProductProps {
  * which is TanStack Router's equivalent of React Router's useLoaderData.
  */
 export const Product = ({ metaData }: ProductProps) => {
-	const loaderData = useLoaderData({ strict: false }) as { params: Record<string, string> }
-	console.log('params', loaderData?.params)
+	// const loaderData = useLoaderData({ strict: false }) as { params: Record<string, string> };
+	// console.log('params', loaderData?.params);
 
 	return (
 		<>
@@ -20,5 +20,5 @@ export const Product = ({ metaData }: ProductProps) => {
 				<p>Product</p>
 			</div>
 		</>
-	)
-}
+	);
+};

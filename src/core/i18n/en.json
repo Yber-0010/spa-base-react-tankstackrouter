@@ -1,16 +1,16 @@
 {
-  "welcome": "Welcome",
-  "description": "This is the app",
-  "login": {
-    "title": "Login",
-    "validation": {
-      "emailInvalid": "Invalid email address",
-      "emailRequired": "Email is required",
-      "passwordRequired": "Password is required",
-      "passwordMin": "Password must be at least 6 characters"
-    }
-  },
-	"topTitles":{
+	"welcome": "Welcome",
+	"description": "This is the app",
+	"login": {
+		"title": "Login",
+		"validation": {
+			"emailInvalid": "Invalid email address",
+			"emailRequired": "Email is required",
+			"passwordRequired": "Password is required",
+			"passwordMin": "Password must be at least 6 characters"
+		}
+	},
+	"topTitles": {
 		"home": "Home",
 		"product": "Product",
 		"contact": "Contact",

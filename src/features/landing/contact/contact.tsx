@@ -1,7 +1,7 @@
-import { MetaTags, type MetaHelmetProps } from '../../../shared/helpers/MetaTags'
+import { type MetaHelmetProps, MetaTags } from '../../../shared/helpers/MetaTags';
 
 interface ContactProps {
-	metaData?: MetaHelmetProps['metaData']
+	metaData?: MetaHelmetProps['metaData'];
 }
 
 export const Contact = ({ metaData }: ContactProps) => {
@@ -10,5 +10,5 @@ export const Contact = ({ metaData }: ContactProps) => {
 			<MetaTags metaData={metaData} />
 			<div>Contact</div>
 		</>
-	)
-}
+	);
+};

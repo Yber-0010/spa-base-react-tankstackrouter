@@ -1,8 +1,8 @@
-import { Link, useParams } from '@tanstack/react-router'
-import { Stack, Title, Text, Button } from '@mantine/core'
+import { Button, Stack, Text, Title } from '@mantine/core';
+import { Link, useParams } from '@tanstack/react-router';
 
 export const AdminUserDetail = () => {
-	const { userId } = useParams({ strict: false })
+	const { userId } = useParams({ strict: false });
 
 	return (
 		<Stack gap="md">
@@ -12,10 +12,12 @@ export const AdminUserDetail = () => {
 				</Button>
 			</div>
 			<Title order={3}>Detalle del usuario</Title>
-			<Text>ID: <strong>{userId}</strong></Text>
+			<Text>
+				ID: <strong>{userId}</strong>
+			</Text>
 			<Text c="dimmed" size="sm">
 				(Aquí iría la información completa del usuario {userId})
 			</Text>
 		</Stack>
-	)
-}
+	);
+};

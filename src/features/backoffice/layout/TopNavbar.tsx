@@ -1,27 +1,24 @@
-import {
-	AppShell,
-	ActionIcon,
-	Avatar,
-	Box,
-	Text,
-	Tooltip,
-	Badge,
-} from '@mantine/core'
+import { ActionIcon, AppShell, Avatar, Badge, Box, Text, Tooltip } from '@mantine/core';
 
-import './backofficeLayout.css'
-import { useTraslate } from '@/shared/hooks/useTraslate'
+import './backofficeLayout.css';
+import { useTraslate } from '@/shared/hooks/useTraslate';
 
 interface TopNavbarProps {
-	leftOpened: boolean
-	rightOpened: boolean
-	onToggleLeft: () => void
-	onToggleRight: () => void
-	pageTitle?: string
+	leftOpened: boolean;
+	rightOpened: boolean;
+	onToggleLeft: () => void;
+	onToggleRight: () => void;
+	pageTitle?: string;
 }
 
-export const TopNavbar = ({leftOpened,rightOpened,onToggleLeft,onToggleRight,pageTitle = 'Dashboard',}: TopNavbarProps) => {
-
-	const { t } = useTraslate()
+export const TopNavbar = ({
+	leftOpened,
+	rightOpened,
+	onToggleLeft,
+	onToggleRight,
+	pageTitle = 'Dashboard',
+}: TopNavbarProps) => {
+	const { t } = useTraslate();
 
 	return (
 		<AppShell.Header className="header">
@@ -96,11 +93,17 @@ export const TopNavbar = ({leftOpened,rightOpened,onToggleLeft,onToggleRight,pag
 				<div className="userBlock">
 					<Box visibleFrom="sm">
 						<div style={{ textAlign: 'right', lineHeight: 1.2 }}>
-							<Text size="xs" fw={600} c="dark">Mia Taylor</Text>
-							<Text size="xs" c="gray.5">Comercial</Text>
+							<Text size="xs" fw={600} c="dark">
+								Mia Taylor
+							</Text>
+							<Text size="xs" c="gray.5">
+								Comercial
+							</Text>
 						</div>
 					</Box>
-					<Avatar size="sm" radius="xl" color="brand">MT</Avatar>
+					<Avatar size="sm" radius="xl" color="brand">
+						MT
+					</Avatar>
 				</div>
 
 				{/* Toggle sidebar derecho (icono panel) */}
@@ -117,5 +120,5 @@ export const TopNavbar = ({leftOpened,rightOpened,onToggleLeft,onToggleRight,pag
 				</Tooltip>
 			</div>
 		</AppShell.Header>
-	)
-}
+	);
+};

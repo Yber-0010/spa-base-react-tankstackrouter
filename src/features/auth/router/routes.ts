@@ -1,12 +1,14 @@
-import { lazy } from 'react'
-import { authMetaData } from './metadata'
-import { ROUTES } from '../../../shared/constants/routes'
+import { lazy } from 'react';
+import { ROUTES } from '../../../shared/constants/routes';
+import { authMetaData } from './metadata';
 
 // const AdminUsers     = lazy(() => import('../users/adminUsers').then(m => ({ default: m.AdminUsers })))
-const Login = lazy(() => import('../login/presenter/views/login').then(m => ({ default: m.Login })))
+const Login = lazy(() =>
+	import('../login/presenter/views/login').then((m) => ({ default: m.Login }))
+);
 
-const { auth } = ROUTES
-const { login } = authMetaData()
+const { auth } = ROUTES;
+const { login } = authMetaData();
 
 export const routes = [
 	{
@@ -14,4 +16,4 @@ export const routes = [
 		component: Login,
 		metadata: login,
 	},
-] as const
+] as const;

@@ -1,4 +1,4 @@
-import { Outlet } from '@tanstack/react-router'
+import { Outlet } from '@tanstack/react-router';
 
 export const AdminLayout = () => {
 	return (
@@ -6,5 +6,5 @@ export const AdminLayout = () => {
 			{/* Aquí podés agregar nav/sidebar propio del admin */}
 			<Outlet />
 		</>
-	)
-}
+	);
+};

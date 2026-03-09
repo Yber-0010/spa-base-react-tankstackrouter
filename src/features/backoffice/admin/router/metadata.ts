@@ -12,6 +12,6 @@ export const adminMetaData = () => {
 		userDetail: {
 			title: 'userDetail',
 		},
-	}
-	return metaData
-}
+	};
+	return metaData;
+};

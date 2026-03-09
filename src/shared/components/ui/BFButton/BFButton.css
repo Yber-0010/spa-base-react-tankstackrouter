@@ -1,9 +1,9 @@
 .bfbutton {
-  background-color: #556EED;
-  border-radius: 8px;
-  font-weight: 600;
+	background-color: #556eed;
+	border-radius: 8px;
+	font-weight: 600;
 }
 
 .bfbutton:hover {
-  background-color: #4458c7;
+	background-color: #4458c7;
 }

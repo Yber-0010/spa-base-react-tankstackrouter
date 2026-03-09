@@ -1,12 +1,10 @@
-
-import { z } from 'zod';
 import { useForm } from '@mantine/form';
 import { zod4Resolver } from 'mantine-form-zod-resolver';
+import { useCallback, useEffect } from 'react';
+import { z } from 'zod';
 import { useLocalStorage } from '@/shared/hooks/useLocalStorage';
 import { useTraslate } from '@/shared/hooks/useTraslate';
 import { keyStorage } from '@/shared/utils/keyStorage';
-import { useEffect } from 'react';
-
 
 export const useFormLogin = () => {
 	const { t } = useTraslate();
@@ -39,20 +37,23 @@ export const useFormLogin = () => {
 		validate: zod4Resolver(schema),
 	});
 
-	const handleRememberMe = (checked: boolean) => {
-		if (checked) {
-			const email = loginForm.values.email;
-			if (email) {
-				setStorage(keys.loginRemember, { email });
+	const handleRememberMe = useCallback(
+		(checked: boolean) => {
+			if (checked) {
+				const email = loginForm.values.email;
+				if (email) {
+					setStorage(keys.loginRemember, { email });
+				}
+			} else {
+				removeStorage(keys.loginRemember);
 			}
-		} else {
-			removeStorage(keys.loginRemember);
-		}
-	};
+		},
+		[loginForm.values.email, setStorage, removeStorage, keys.loginRemember]
+	);
 
 	useEffect(() => {
 		handleRememberMe(loginForm.values.rememberMe);
-	}, [loginForm.values.rememberMe, loginForm.values.email]);
+	}, [loginForm.values.rememberMe, handleRememberMe]);
 
 	return { loginForm, handleRememberMe };
-}
+};

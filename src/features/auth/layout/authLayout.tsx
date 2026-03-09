@@ -1,11 +1,7 @@
-import { Outlet } from '@tanstack/react-router'
+import { Outlet } from '@tanstack/react-router';
 
 export const AuthLayout = () => {
-	return (
-		<>
-			<Outlet />
-		</>
-	)
-}
+	return <Outlet />;
+};
 
-export default AuthLayout
+export default AuthLayout;

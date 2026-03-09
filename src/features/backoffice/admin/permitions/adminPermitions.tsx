@@ -1,7 +1,7 @@
-import { MetaTags, type MetaHelmetProps } from '../../../../shared/helpers/MetaTags'
+import { type MetaHelmetProps, MetaTags } from '../../../../shared/helpers/MetaTags';
 
 interface AdminPermitionsProps {
-	metaData?: MetaHelmetProps['metaData']
+	metaData?: MetaHelmetProps['metaData'];
 }
 
 export const AdminPermitions = ({ metaData }: AdminPermitionsProps) => {
@@ -10,5 +10,5 @@ export const AdminPermitions = ({ metaData }: AdminPermitionsProps) => {
 			<MetaTags metaData={metaData} />
 			<div>Admin Permitions</div>
 		</>
-	)
-}
+	);
+};

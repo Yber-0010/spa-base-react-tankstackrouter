@@ -1,7 +1,7 @@
-import { MetaTags, type MetaHelmetProps } from '../../../shared/helpers/MetaTags'
+import { type MetaHelmetProps, MetaTags } from '../../../shared/helpers/MetaTags';
 
 interface RegisterProps {
-	metaData?: MetaHelmetProps['metaData']
+	metaData?: MetaHelmetProps['metaData'];
 }
 
 export const Register = ({ metaData }: RegisterProps) => {
@@ -10,5 +10,5 @@ export const Register = ({ metaData }: RegisterProps) => {
 			<MetaTags metaData={metaData} />
 			<div>Register</div>
 		</>
-	)
-}
+	);
+};

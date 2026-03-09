@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import { Helmet } from 'react-helmet-async';
 import { useTraslate } from '@/shared/hooks/useTraslate';
 
 export type MetaHelmetProps = {
@@ -8,16 +8,15 @@ export type MetaHelmetProps = {
 		ogTitle?: string;
 		ogDescription?: string;
 		robot?: string;
-	}
+	};
 };
 
 export const MetaTags = ({ metaData }: MetaHelmetProps) => {
-	
+	const { t } = useTraslate();
+
 	if (!metaData) return null;
 
 	const { title, description = '', ogTitle = '', ogDescription = '', robot = '' } = metaData;
-
-	const { t } = useTraslate()
 
 	return (
 		<Helmet>
@@ -29,5 +28,5 @@ export const MetaTags = ({ metaData }: MetaHelmetProps) => {
 			<meta name="og:type" content="website" />
 			{/* add your meta data here */}
 		</Helmet>
-	)
-}
+	);
+};

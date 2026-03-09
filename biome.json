@@ -39,6 +39,26 @@
 			"trailingCommas": "es5"
 		}
 	},
+	"css": {
+		"linter": {
+			"enabled": true
+		},
+		"parser": {
+			"cssModules": false
+		}
+	},
+	"overrides": [
+		{
+			"includes": ["**/*.css"],
+			"linter": {
+				"rules": {
+					"complexity": {
+						"noImportantStyles": "off"
+					}
+				}
+			}
+		}
+	],
 	"assist": {
 		"enabled": true,
 		"actions": {

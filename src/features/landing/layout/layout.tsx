@@ -1,4 +1,4 @@
-import { Link, Outlet, useRouterState } from '@tanstack/react-router'
+import { Link, Outlet, useRouterState } from '@tanstack/react-router';
 
 /**
  * Landing section layout – equivalent of LandinLayout in base-react.
@@ -6,7 +6,7 @@ import { Link, Outlet, useRouterState } from '@tanstack/react-router'
  * useRouterState().status === 'pending' replaces useNavigation() for load states.
  */
 export const LandingLayout = () => {
-	const { status } = useRouterState()
+	const { status } = useRouterState();
 
 	return (
 		<>
@@ -23,7 +23,11 @@ export const LandingLayout = () => {
 						</Link>
 					</li>
 					<li>
-						<Link to="/product/$id" params={{ id: '1' }} activeProps={{ style: { fontWeight: 'bold' } }}>
+						<Link
+							to="/product/$id"
+							params={{ id: '1' }}
+							activeProps={{ style: { fontWeight: 'bold' } }}
+						>
 							Product
 						</Link>
 					</li>
@@ -52,5 +56,5 @@ export const LandingLayout = () => {
 			{status === 'pending' && <div>Loading…</div>}
 			<Outlet />
 		</>
-	)
-}
+	);
+};

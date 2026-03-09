@@ -5,7 +5,7 @@ export const backofficeMetaData = () => {
 		},
 		dashboard: {
 			title: 'dashboard',
-		}
-	}
-	return metaData
-}
+		},
+	};
+	return metaData;
+};

@@ -1,20 +1,18 @@
-import { useEffect } from 'react'
-import { useNavigate } from '@tanstack/react-router'
+import { useNavigate } from '@tanstack/react-router';
+import { useEffect } from 'react';
 
 export const createNotFoundRedirect = (to: string) => {
-
 	const NotFoundRedirect = () => {
-
-		const navigate = useNavigate()
+		const navigate = useNavigate();
 
 		useEffect(() => {
-			navigate({ to, replace: true })
-		}, [navigate])
-		
-		return null
-	}
+			navigate({ to, replace: true });
+		}, [navigate]);
 
-	NotFoundRedirect.displayName = `NotFoundRedirect(${to})`
+		return null;
+	};
 
-	return NotFoundRedirect
-}
+	NotFoundRedirect.displayName = `NotFoundRedirect(${to})`;
+
+	return NotFoundRedirect;
+};

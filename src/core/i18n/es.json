@@ -1,17 +1,17 @@
 {
-  "welcome": "Bienvenido",
-  "description": "Esta es la aplicación",
-  "login": {
-    "title": "Iniciar sesión",
-    "rememberMe": "Recuérdame",
-    "validation": {
-      "emailInvalid": "Correo electrónico inválido",
-      "emailRequired": "El correo electrónico es requerido",
-      "passwordRequired": "La contraseña es requerida",
-      "passwordMin": "La contraseña debe tener al menos 6 caracteres"
-    }
-  },
-	"topTitles":{
+	"welcome": "Bienvenido",
+	"description": "Esta es la aplicación",
+	"login": {
+		"title": "Iniciar sesión",
+		"rememberMe": "Recuérdame",
+		"validation": {
+			"emailInvalid": "Correo electrónico inválido",
+			"emailRequired": "El correo electrónico es requerido",
+			"passwordRequired": "La contraseña es requerida",
+			"passwordMin": "La contraseña debe tener al menos 6 caracteres"
+		}
+	},
+	"topTitles": {
 		"home": "Inicio",
 		"product": "Producto",
 		"contact": "Contacto",
